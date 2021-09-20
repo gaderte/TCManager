@@ -1,0 +1,58 @@
+﻿<Window x:Name="MainWindow1" x:Class="TCManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChannelManager"
+        mc:Ignorable="d"
+        Title="Channel Manager - Non connecté" Height="800" Width="1516" IsEnabled="True">
+    <Canvas x:Name="MainCanvas" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="1506">
+        <Button x:Name="ConnectButton" Content="Connect" Canvas.Left="924" Canvas.Top="487" Width="75" Click="ConnectButton_Click" IsEnabled="False"/>
+        <Button x:Name="DisconnectButton" Content="Disconnect" Canvas.Left="1021" Canvas.Top="487" Width="75" Click="DisconnectButton_Click" IsEnabled="False"/>
+        <ListView x:Name="ListeMessages" Height="690" Canvas.Left="10" Canvas.Top="40" Width="770" SelectionChanged="ListeMessages_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="770"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="ListeSubs" Height="260" Canvas.Left="795" Canvas.Top="40" Width="340">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="340"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="ListeModerateurs" Height="260" Canvas.Left="1156" Canvas.Top="40" Width="340">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="340"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Chat :" Canvas.Left="286" Canvas.Top="3" Width="68" FontSize="20"/>
+        <Label Content="Subscribers :" Canvas.Left="896" Canvas.Top="3" Width="164" FontSize="20"/>
+        <Label Content="Modérateurs :" Canvas.Left="1264" Canvas.Top="3" Width="164" FontSize="20"/>
+        <Button x:Name="PauseTchat" Content="Pause" Canvas.Left="705" Canvas.Top="15" Width="75" Click="PauseTchat_Click" IsEnabled="False"/>
+        <Label Content="Chaîne : " Canvas.Left="795" Canvas.Top="365" Width="86" FontSize="20"/>
+        <Label Content="Token :" Canvas.Left="795" Canvas.Top="421" Width="86" FontSize="20"/>
+        <PasswordBox x:Name="tokenBox" Canvas.Left="886" Canvas.Top="424" Width="210" Height="36" BorderThickness="2" FontSize="20" PasswordChanged="TokenBox_PasswordChanged"/>
+        <TextBox x:Name="channelBox" Height="35" Canvas.Left="886" TextWrapping="Wrap" Canvas.Top="369" Width="210" FontSize="20" BorderThickness="2" TextChanged="ChannelBox_TextChanged"/>
+        <Label Content="Commandes :" Canvas.Left="1156" Canvas.Top="312" Width="154" FontSize="20"/>
+        <Button x:Name="toMButton" Content="Time out 1 jour" Canvas.Left="1156" Canvas.Top="420" Width="140" Height="30" Click="toMButton_Click"/>
+        <Button x:Name="banDefButton" Content="Ban def" Canvas.Left="1156" Canvas.Top="376" Width="140" Height="30" Click="banDefButton_Click"/>
+        <Button x:Name="toSButton" Content="Time Out 10 minutes" Canvas.Left="1336" Canvas.Top="376" Width="140" Height="30" Click="toSButton_Click"/>
+        <Button x:Name="toLButton" Content="Time out 1 semaine" Canvas.Left="1336" Canvas.Top="420" Width="140" Height="30" Click="toLButton_Click"/>
+        <Button x:Name="toPersoButton" Content="Time out :" Canvas.Left="1156" Canvas.Top="466" Width="65" Height="30" Click="toPersoButton_Click"/>
+        <Label x:Name="labelIndicSec" Content="(en sec) soit 0m, 0h, 0j " Canvas.Left="1285" Canvas.Top="466" Height="30" Width="191"/>
+        <TextBox x:Name="toPersoText" Height="30" Canvas.Left="1226" TextWrapping="Wrap" Text="0" Canvas.Top="466" Width="59" TextChanged="toPersoText_TextChanged"  FontSize="14" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="motifText" Height="46" Canvas.Left="1156" TextWrapping="Wrap" Canvas.Top="536" Width="320" AutomationProperties.HelpText="Entrer un motif... (facultatif)" BorderThickness="2"/>
+        <Label Content="Motif :" Canvas.Left="1156" Canvas.Top="499" Width="132" FontSize="20"/>
+        <Button x:Name="emoteOnlyOKButton" Content="Activer emote-only" Canvas.Left="1156" Canvas.Top="601" Width="140" Height="30" Click="emoteOnlyOKButton_Click"/>
+        <Button x:Name="emoteOnlyNOKButton" Content="Désactiver emote-only" Canvas.Left="1336" Canvas.Top="601" Width="140" Height="30" Click="emoteOnlyNOKButton_Click"/>
+        <Button x:Name="slowModeOnButton" Content="Activer slowmode" Canvas.Left="1156" Canvas.Top="653" Width="140" Height="30" Click="slowModeOnButton_Click"/>
+        <Button x:Name="slowModeOffButton" Content="Désactiver slowmode" Canvas.Left="1336" Canvas.Top="653" Width="140" Height="30" Click="slowModeOffButton_Click"/>
+        <Button x:Name="subOnlyButton" Content="Sub Only" Canvas.Left="1156" Canvas.Top="700" Width="140" Height="30" Click="subOnlyButton_Click"/>
+        <Button x:Name="subOnlyOff" Content="Désactiver subonly" Canvas.Left="1336" Canvas.Top="700" Width="140" Height="30" Click="subOnlyOff_Click"/>
+    </Canvas>
+</Window>

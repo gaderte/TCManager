@@ -1,0 +1,17 @@
+﻿<Window x:Name="modeLentWindow" x:Class="TCManager.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TCManager" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        ContentRendered="Window_ContentRendered"
+        Title="Mode lent" Height="125" Width="265">
+    <Canvas HorizontalAlignment="Left" Height="93" VerticalAlignment="Top" Width="255">
+        <TextBox x:Name="txtAnswer" Height="23" Canvas.Left="132" TextWrapping="Wrap" Canvas.Top="17" Width="53"/>
+        <Label Content="Durée du mode lent :" Canvas.Left="5" Canvas.Top="13" Width="127" Height="23"/>
+        <Label Content="secondes" Canvas.Left="185" Canvas.Top="13" Width="60" Height="23"/>
+        <Button IsDefault="True" Name="btnDialogOk" Click="btnDialogOk_Click"  Content="Valider" Canvas.Left="77" Canvas.Top="63" Width="75"/>
+        <Button IsCancel="True" x:Name="Annuler" Content="Annuler" Canvas.Left="160" Canvas.Top="63" Width="75"/>
+    </Canvas>
+</Window>
